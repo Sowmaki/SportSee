@@ -1,0 +1,13 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.horizonNav {
+  @include center-flex(row, space-between, center);
+  background-color: $black;
+  font-size: 1.5rem;
+  color: white;
+
+  &__nav {
+    @include center-flex(row, space-between, center);
+  }
+}

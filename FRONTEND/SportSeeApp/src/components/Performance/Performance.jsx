@@ -28,9 +28,10 @@ const Performance = () => {
   return (
     <>
       {performance1}
+
     </>
   )
 
 }
 
-export default Performance
+export default Performance 

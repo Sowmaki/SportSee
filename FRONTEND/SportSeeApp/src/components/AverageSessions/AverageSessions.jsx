@@ -63,7 +63,7 @@ const AverageSessions = () => {
 
   const renderLegend = () => {
     return (
-      <p className="averageSessionsChart__title">Durée moyenne des sessions</p>
+      <p className="averageSessions__title">Durée moyenne des sessions</p>
     )
   }
 
@@ -72,7 +72,7 @@ const AverageSessions = () => {
   return (
     <>
       <LineChart
-        className="averageSessionsChart"
+        className="averageSessions__chart"
         style={{ backgroundColor: '#FF0000', borderRadius: '5px' }}
         width={258} height={263}
         data={formatedAverageSessions.sessions}

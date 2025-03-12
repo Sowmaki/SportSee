@@ -1,0 +1,14 @@
+.dayGoal {
+  &__chart {
+    border-radius: 5px;
+
+    .recharts-radial-bar-background-sector {
+      fill: #FBFBFB;
+    }
+  }
+
+  &__title {
+    margin: 24px 0 0 30px;
+    color: #20253A;
+  }
+}

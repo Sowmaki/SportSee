@@ -5,6 +5,7 @@ import Erreur from "../../pages/Erreur/Erreur"
 import Activity from "../Activity/Activity"
 import AverageSessions from "../AverageSessions/AverageSessions"
 import Banner from "../Banner/Banner"
+import DayGoal from "../DayGoal/DayGoal"
 import Performance from "../Performance/Performance"
 
 const Dashboard = () => {
@@ -31,11 +32,11 @@ const Dashboard = () => {
 
   return (
     <>
-      <Banner userName={userName} message="Félicitations ! Vous avez explosé vos objectifs hier 👏" />
-      <Activity />
-      <AverageSessions />
-      <Performance />
-
+      <Banner className="banner" userName={userName} message="Félicitations ! Vous avez explosé vos objectifs hier 👏" />
+      <Activity className="activity" />
+      <AverageSessions className="averageSessions" />
+      <Performance className="performance" />
+      <DayGoal className='dayGoal' data={user} />
     </>
   )
 

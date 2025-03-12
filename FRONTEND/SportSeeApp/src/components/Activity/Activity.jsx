@@ -48,8 +48,8 @@ const Activity = () => {
 
   return (
     <>
-      <BarChart className="activityChart" style={{ backgroundColor: "#fbfbfb", borderRadius: '5px' }} width={835} height={320} data={formattedActivity.sessions} barGap="5%">
-        <h2 className="activityChart__title">Activité quotidienne</h2>
+      <BarChart className="activity__chart" style={{ backgroundColor: "#fbfbfb", borderRadius: '5px' }} width={835} height={320} data={formattedActivity.sessions} barGap="5%">
+        <h2 className="activity__title">Activité quotidienne</h2>
         <CartesianGrid strokeDasharray="2" vertical={false} />
         <YAxis
           yAxisId={"kilograms2"}

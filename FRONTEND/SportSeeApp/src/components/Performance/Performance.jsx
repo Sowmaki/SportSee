@@ -51,7 +51,7 @@ const Performance = () => {
 
   return (
     <>
-      <RadarChart cx="50%" cy="50%" outerRadius={70} width={258} height={263} data={formattedPerformances.data} style={{ backgroundColor: '#282D30', borderRadius: '5px' }}>
+      <RadarChart className="performance__chart" cx="50%" cy="50%" outerRadius={70} width={258} height={263} data={formattedPerformances.data} style={{ backgroundColor: '#282D30', borderRadius: '5px' }}>
         <PolarGrid radialLines={false} polarRadius={[0, 9, 18, 37, 56, 75]} />
         <PolarAngleAxis
           dataKey="kind"

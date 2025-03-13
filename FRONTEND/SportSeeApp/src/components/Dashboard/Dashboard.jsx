@@ -57,8 +57,8 @@ const Dashboard = () => {
         </div>
         <div className="dashboard__chartsSection__infos">
           {
-            formattedUserKeyData.map((info) => {
-              return <InfoCard category={info.label} value={info.value} />
+            formattedUserKeyData.map((info, index) => {
+              return <InfoCard key={index} category={info.label} value={info.value} />
             })
           }
         </div>

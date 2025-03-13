@@ -6,7 +6,9 @@ import Activity from "../Activity/Activity"
 import AverageSessions from "../AverageSessions/AverageSessions"
 import Banner from "../Banner/Banner"
 import DayGoal from "../DayGoal/DayGoal"
+import InfoCard from "../InfoCard/InfoCard"
 import Performance from "../Performance/Performance"
+import './Dashboard.scss'
 
 const Dashboard = () => {
 
@@ -26,18 +28,42 @@ const Dashboard = () => {
 
   if (loading) return <>Chargement...</>
   if (error) return error
-
   if (!user) return <Erreur />
+
   const userName = user.userInfos.firstName
+  const keyDataLabels = {
+    calorieCount: "Calories",
+    proteinCount: "Protéines",
+    carbohydrateCount: "Glucides",
+    lipidCount: "Lipides"
+  };
+
+  const formattedUserKeyData = Object.entries(user.keyData).map(([key, value]) => ({
+    label: keyDataLabels[key],
+    value: value
+  }));
 
   return (
-    <>
-      <Banner className="banner" userName={userName} message="Félicitations ! Vous avez explosé vos objectifs hier 👏" />
-      <Activity className="activity" />
-      <AverageSessions className="averageSessions" />
-      <Performance className="performance" />
-      <DayGoal className='dayGoal' data={user} />
-    </>
+    <div className="dashboard">
+      <Banner userName={userName} message="Félicitations ! Vous avez explosé vos objectifs hier 👏" />
+      <section className="dashboard__chartsSection">
+        <div className="dashboard__chartsSection__group1">
+          <Activity />
+          <div className="dashboard__chartsSection__group2">
+            <AverageSessions />
+            <Performance />
+            <DayGoal data={user} />
+          </div>
+        </div>
+        <div className="dashboard__chartsSection__infos">
+          {
+            formattedUserKeyData.map((info) => {
+              return <InfoCard category={info.label} value={info.value} />
+            })
+          }
+        </div>
+      </section>
+    </div>
   )
 
 }

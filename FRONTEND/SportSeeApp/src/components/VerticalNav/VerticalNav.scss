@@ -1,0 +1,32 @@
+@use "../../styles/mixins.scss" as *;
+
+.verticalNav {
+  @include center-flex(column, flex-end, center);
+  background-color: #020203;
+  gap: 164px;
+  height: 100%;
+  padding: 0 27px 51px 27px;
+  box-sizing: border-box;
+
+  &__activities {
+    @include center-flex(column, center, center);
+    gap: 20px;
+
+    &__activity {
+      @include center-flex(column, center, center);
+      width: 64px;
+      height: 64px;
+      background-color: white;
+      border-radius: 6px;
+    }
+  }
+
+  &__copyrights {
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    transform: rotate(180deg);
+    color: white;
+    font-size: 0.75rem;
+    margin: 0;
+  }
+}

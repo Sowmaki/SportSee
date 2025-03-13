@@ -4,15 +4,15 @@ import "./HorizonNav.scss";
 const HorizonNav = () => {
 
   return (
-    <>
+    <div className="horizonNav">
       <img src={logo} className="horizonNav__logo" alt="logo de SportSee"></img>
       <nav className="horizonNav__nav">
-        <a href="#" className="horizonNav__nav__accueil">Accueil</a>
-        <a href="#" className="horizonNav__nav__profil">Profil</a>
-        <a href="#" className="horizonNav__nav__reglage">Réglage</a>
-        <a href="#" className="horizonNav__nav__communaute">Communauté</a>
+        <a href="#" className="horizonNav__nav__activity">Accueil</a>
+        <a href="#" className="horizonNav__nav__activity">Profil</a>
+        <a href="#" className="horizonNav__nav__activity">Réglage</a>
+        <a href="#" className="horizonNav__nav__activity">Communauté</a>
       </nav>
-    </>
+    </div>
   )
 }
 

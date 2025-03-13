@@ -11,6 +11,7 @@ import {
 } from "recharts"
 import { useUsersActivity } from "../../hooks/useUsersActivity"
 import Erreur from "../../pages/Erreur/Erreur"
+import './Activity.scss'
 
 const Activity = () => {
 
@@ -32,6 +33,7 @@ const Activity = () => {
   if (error) return error
   if (!activity) return <Erreur />
 
+
   //Standardisation des données
   const formatUserActivity = (activity) => {
     return {
@@ -45,11 +47,9 @@ const Activity = () => {
 
   const formattedActivity = formatUserActivity(activity);
 
-
   return (
-    <>
-      <BarChart className="activity__chart" style={{ backgroundColor: "#fbfbfb", borderRadius: '5px' }} width={835} height={320} data={formattedActivity.sessions} barGap="5%">
-        <h2 className="activity__title">Activité quotidienne</h2>
+    <div className="activity">
+      <BarChart className="activity__chart" style={{ backgroundColor: "#fbfbfb", borderRadius: '5px' }} width={771} height={272} data={formattedActivity.sessions} barGap="5%">
         <CartesianGrid strokeDasharray="2" vertical={false} />
         <YAxis
           yAxisId={"kilograms2"}
@@ -73,7 +73,6 @@ const Activity = () => {
           dataKey="day"
           padding={{ left: 5, right: 5 }}
           domain={['dataMin', 'dataMax']}
-          // scale="point"  probleme de mouseover qui se supprime.
           tickLine={false}
           tickMargin={16}
           stroke="#9B9EAC"
@@ -86,6 +85,9 @@ const Activity = () => {
             name === "kilogram" ? [`${value}kg`] : [`${value}kcal`]
           }
         />
+        <text className="activity__title" fill="black" textAnchor="left" dominantBaseline="left">
+          <tspan x="32px" y="24px" fill="#20253A" fontSize="1rem">Activité quotidienne</tspan>
+        </text>
         <Legend
           align="right"
           verticalAlign="top"
@@ -115,7 +117,7 @@ const Activity = () => {
           barSize={7}
           radius={[10, 10, 0, 0]} />
       </BarChart>
-    </>
+    </div>
   )
 
 }

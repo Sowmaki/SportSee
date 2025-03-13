@@ -1,0 +1,29 @@
+@use '../../styles/mixins.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+.dashboard {
+  @include center-flex(column, center, flex-start);
+  padding: 68px 90px 86px 107px;
+  box-sizing: border-box;
+  gap: 77px;
+
+  &__chartsSection {
+    @include center-flex(row, center, center);
+    gap: 30px;
+
+    &__group1 {
+      @include center-flex(column, space-between, center);
+      gap: 30px
+    }
+
+    &__group2 {
+      @include center-flex(row, space-between, center);
+      gap: 30px
+    }
+
+    &__infos {
+      @include center-flex(column, space-between, center);
+      gap: 39px
+    }
+  }
+}

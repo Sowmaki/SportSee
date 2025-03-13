@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Legend, Line, LineChart, Rectangle, Tooltip, XAxis, YAxis } from "recharts";
 import { useUsersAverageSessions } from "../../hooks/useUsersAverageSessions";
 import Erreur from "../../pages/Erreur/Erreur";
+import './AverageSessions.scss';
 
 const AverageSessions = () => {
 
@@ -70,7 +71,7 @@ const AverageSessions = () => {
   const customLineStyle = curveCatmullRom.alpha(0.5)
 
   return (
-    <>
+    <div className="averageSessions">
       <LineChart
         className="averageSessions__chart"
         style={{ backgroundColor: '#FF0000', borderRadius: '5px' }}
@@ -128,17 +129,17 @@ const AverageSessions = () => {
           strokeWidth={2}
           dot={false}
           activeDot={{
-            r: 5,
+            r: 4,
             fill: "#FFFFFF",
             fillOpacity: 1,
             stroke: "#FFFFFF",
             strokeWidth: 8,
-            strokeOpacity: 0.1983,
+            strokeOpacity: 0.4,
           }}
         />
 
       </LineChart>
-    </>
+    </div>
   )
 
 }

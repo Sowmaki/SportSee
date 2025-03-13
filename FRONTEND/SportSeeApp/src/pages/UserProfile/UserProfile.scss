@@ -1,0 +1,7 @@
+@use '../../styles/mixins.scss' as*;
+
+.verticalNavAndDashboard {
+  @include center-flex(row, center, center);
+  height: 933px;
+  width: 100%;
+}

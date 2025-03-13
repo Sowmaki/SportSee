@@ -1,0 +1,32 @@
+@use '../../styles/mixins.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+.infoCard {
+  @include center-flex(row, left, center);
+  gap: 24px;
+  width: 258px;
+  height: 124px;
+  box-sizing: border-box;
+  padding: 32px;
+  background-color: #FBFBFB;
+  border-radius: 5px;
+
+  &__icon {
+    @include center-flex(row, center, center);
+    width: 60px;
+    height: 60px;
+  }
+
+  &__txt {
+    &__value {
+      color: $dark-grey;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    &__category {
+      color: #74798C;
+      font-size: 0.875rem;
+    }
+  }
+}

@@ -50,7 +50,7 @@ const Performance = () => {
   const formattedPerformances = formatKindOfPerformances(userPerformance)
 
   return (
-    <>
+    <div className="performance">
       <RadarChart className="performance__chart" cx="50%" cy="50%" outerRadius={70} width={258} height={263} data={formattedPerformances.data} style={{ backgroundColor: '#282D30', borderRadius: '5px' }}>
         <PolarGrid radialLines={false} polarRadius={[0, 9, 18, 37, 56, 75]} />
         <PolarAngleAxis
@@ -69,7 +69,7 @@ const Performance = () => {
         />
         <Radar dataKey="value" fill="#FF0101" fillOpacity={0.6} />
       </RadarChart>
-    </>
+    </div>
   )
 
 }

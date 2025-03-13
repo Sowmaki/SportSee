@@ -4,10 +4,19 @@
 .horizonNav {
   @include center-flex(row, space-between, center);
   background-color: $black;
-  font-size: 1.5rem;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   color: white;
+  padding: 18px 91px 12px 28px;
+  box-sizing: border-box;
+  width: 100%;
+  gap: 149px;
 
   &__nav {
     @include center-flex(row, space-between, center);
+    gap: 219px;
+
+    &__activity {
+      font-size: 1.5rem;
+    }
   }
 }

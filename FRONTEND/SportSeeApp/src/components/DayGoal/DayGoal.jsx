@@ -12,9 +12,7 @@ const DayGoal = ({ data }) => {
   }
 
   return (
-    <>
-      {`${((data.todayScore || data.score) * 100).toFixed(0)} %`}
-
+    <div className="dayGoal">
       <RadialBarChart
         style={{ backgroundColor: '#FBFBFB' }}
         width={258}
@@ -42,10 +40,10 @@ const DayGoal = ({ data }) => {
           <tspan x="50%" y="65%" fill="grey" fontSize="1rem">objectif</tspan>
         </text>
 
-        <RadialBar minAngle={15} fill="#FF0000" width={10} cornerRadius={50} background clockWise={true} dataKey='score' barSize={10} background={{ fill: "#E0E0E0" }} />
+        <RadialBar minAngle={15} fill="#FF0000" width={10} cornerRadius={50} background clockWise={true} dataKey='score' barSize={10} />
         <Legend content={renderLegend} iconSize={10} width={120} height={140} layout='vertical' verticalAlign='top' align="left" />
       </RadialBarChart>
-    </>
+    </div>
   )
 }
 

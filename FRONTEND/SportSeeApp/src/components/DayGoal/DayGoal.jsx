@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Legend, PolarAngleAxis, RadialBar, RadialBarChart } from "recharts";
 import "./DayGoal.scss";
 
@@ -46,5 +47,18 @@ const DayGoal = ({ data }) => {
     </div>
   )
 }
+
+DayGoal.propTypes = PropTypes.shape({
+  userId: PropTypes.number,
+  sessions: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.string,
+      kilogram: PropTypes.number,
+      calories: PropTypes.number
+    })
+  ).isRequired
+})
+
+
 
 export default DayGoal

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import calorieIcon from "../../assets/infos/calorie.svg";
 import carbohydrateIcon from "../../assets/infos/carbohydrate.svg";
 import lipidIcon from "../../assets/infos/lipid.svg";
@@ -44,5 +45,10 @@ const InfoCard = ({ category, value }) => {
     </div>
   )
 }
+
+InfoCard.propTypes = {
+  category: PropTypes.string,
+  value: PropTypes.number
+};
 
 export default InfoCard

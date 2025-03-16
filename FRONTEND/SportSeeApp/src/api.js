@@ -9,6 +9,7 @@ export const api = {
       return data.data;
     } catch (error) {
       console.error('Error fetching user data:', error);
+      throw error
     }
   }
 }
